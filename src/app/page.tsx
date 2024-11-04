@@ -56,34 +56,54 @@ const FloatingIcons = () => {
     { name: 'Git', src: '/icons/git.svg' },
     { name: 'Github', src: '/icons/github.svg' },
     { name: 'Upwork', src: '/icons/upwork.svg' },
-    
   ];
+
+  const [windowSize, setWindowSize] = useState({ width: 1000, height: 1000 })
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      })
+    }
+
+    setIsClient(true)
+    handleResize()
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0">
-      {icons.map((icon, index) => (
-        <motion.div
-          key={icon.name}
-          className="absolute"
-          initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            opacity: 0.4,
-          }}
-          animate={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            opacity: 0.6,
-          }}
-          transition={{
-            duration: Math.random() * 10 + 20,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-        >
-          <Image src={icon.src} alt={icon.name} width={40} height={40} />
-        </motion.div>
-      ))}
+      <AnimatePresence>
+        {isClient && icons.map((icon, index) => (
+          <motion.div
+            key={icon.name}
+            className="absolute"
+            initial={{
+              x: Math.random() * windowSize.width,
+              y: Math.random() * windowSize.height,
+              opacity: 0.4,
+            }}
+            animate={{
+              x: Math.random() * windowSize.width,
+              y: Math.random() * windowSize.height,
+              opacity: 0.6,
+            }}
+            exit={{ opacity: 0 }}
+            transition={{
+              duration: Math.random() * 10 + 20,
+              repeat: Infinity,
+              repeatType: 'reverse',
+            }}
+          >
+            <Image src={icon.src} alt={icon.name} width={40} height={40} />
+          </motion.div>
+        ))}
+      </AnimatePresence>
     </div>
   );
 };
