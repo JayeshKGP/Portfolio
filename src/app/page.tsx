@@ -210,20 +210,6 @@ export default function Portfolio() {
   ];
 
 
-  const responsibilities = [
-    {
-      title: "Founder & CEO",
-      organization: "SkillShodh",
-      period: "Ongoing",
-      description: "Created a community of like-minded individuals and provided internship opportunities. Led the backend development and managed hosting services."
-  },
-  {
-    title: "Flutter Developer Intern",
-    organization: "Build With Innovation",
-    period: "November 2023 - April 2024",
-    description: "Contributed to various applications and enhanced UI/UX using Flutter."
-},
-  ]
 
   const achievements = [
     "Cracked JEE Advanced and secured admission to IIT Kharagpur 🎓",
@@ -277,7 +263,6 @@ export default function Portfolio() {
             <Button variant="ghost" onClick={() => scrollTo('experience')} className="text-gray-300 hover:text-gray-800">Experience</Button>
             <Button variant="ghost" onClick={() => scrollTo('skills')} className="text-gray-300 hover:text-gray-800">Skills</Button>
             <Button variant="ghost" onClick={() => scrollTo('certifications')} className="text-gray-300 hover:text-gray-800">Certifications</Button>
-            <Button variant="ghost" onClick={() => scrollTo('por')} className="text-gray-300 hover:text-gray-800">POR</Button>
             <Button variant="ghost" onClick={() => scrollTo('achievements')} className="text-gray-300 hover:text-gray-800">Achievements</Button>
             <Button variant="ghost" onClick={() => scrollTo('contact')} className="text-gray-300 hover:text-gray-800">Contact</Button>
           </nav>
@@ -303,7 +288,6 @@ export default function Portfolio() {
               <Button variant="ghost" onClick={() => scrollTo('experience')} className="text-gray-300 hover:text-gray-800">Experience</Button>
               <Button variant="ghost" onClick={() => scrollTo('skills')} className="text-gray-300 hover:text-gray-800">Skills</Button>
               <Button variant="ghost" onClick={() => scrollTo('certifications')} className="text-gray-300 hover:text-gray-800">Certifications</Button>
-              <Button variant="ghost" onClick={() => scrollTo('por')} className="text-gray-300 hover:text-gray-800">POR</Button>
               <Button variant="ghost" onClick={() => scrollTo('achievements')} className="text-gray-300 hover:text-gray-800">Achievements</Button>
               <Button variant="ghost" onClick={() => scrollTo('contact')} className="text-gray-300 hover:text-gray-800">Contact</Button>
             </nav>
@@ -584,26 +568,7 @@ export default function Portfolio() {
           </div>
         </motion.section>
 
-        <motion.section
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          id="por"
-          className="mb-16 pt-20"
-        >
-          <h2 className="text-3xl font-bold mb-6 text-cyan-400">Positions of Responsibility 🎖️</h2>
-          {responsibilities.map((resp, index) => (
-            <Card key={index} className="mb-6 bg-gray-800 border-purple-700">
-              <CardHeader>
-                <CardTitle className="text-purple-300">{resp.title}</CardTitle>
-                <CardDescription className="text-gray-400">{resp.organization} | {resp.period}</CardDescription>
-              </CardHeader>
-              <CardContent className="text-gray-300">
-                <p>{resp.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </motion.section>
+        
 
         <motion.section
           initial={{ opacity: 0, y: 20 }}
