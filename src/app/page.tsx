@@ -148,7 +148,7 @@ export default function Portfolio() {
         "Deployed on AWS EC2 with a CI/CD pipeline using GitHub Actions and Route 53.",
       ],
       tags: ["Next.js", "MongoDB", "GitHub Actions", "AWS EC2", "AWS Route 53", "NGINX", "SEO", "Google Adscene"],
-      link: "https://bitelink.com"
+      link: "https://bitelink.in"
     },
     {
       title: "SkillShodh",
