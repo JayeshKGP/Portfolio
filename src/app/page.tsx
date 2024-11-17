@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Github, Linkedin, Mail, Menu, X, ExternalLink, Download, ExternalLinkIcon, ChevronDown } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import AdSense from './adsense'
 
 const AnimatedTitle = () => {
   const titles = [
@@ -323,6 +324,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 font-mono flex relative overflow-hidden">
+      <AdSense />
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
         body {
